@@ -31,7 +31,9 @@
     In the end, the JavaScript engine takes the bytecode the interpreter outputs and mixes in the optimized code the compiler outputs and then gives that to the computer. This is called "Just in Time" or JIT Compiler.
 
     Memoization:
-    
+    *Memoization is a way to cache a return value of a function based on its parameters. 
+    *This makes the function that takes a long time run much faster after one execution. 
+    *If the parameter changes, it will still have to reevaluate the function.
 
 */
 
