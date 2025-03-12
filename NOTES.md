@@ -1,5 +1,5 @@
 <!-- JAVASCRIPT INTERVIEW QUESTIONS AND ANSWERS -->
-### Advanced Topics:
+# Advanced Topics:
 - How does JS garbage collection works?
    Before understanding garbage collection , its important to know how JS manages memory
     - Allocation- memory is allocated when you declare variables, objects, or functions.
