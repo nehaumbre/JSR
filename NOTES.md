@@ -40,11 +40,11 @@
      - Closures Holding references
      **Closures can prevent garbage collection if they maintain references to large objects**
      - How to [DEBUG] memory Issues in JS
-     [1] Use chrome Devtools(Performance and memory tab => F12/ Ctril + Shift + I)
+     #### Use chrome Devtools(Performance and memory tab => F12/ Ctril + Shift + I)
           * go to memory tab , take a heap snapshot to analyze memory usage and look for detached DOM elements
-     [2] Use console.memory in browsers
+     #### Use console.memory in browsers
          console.log(peformance.memory); //logs current memory usage
-     [3] Monitor Heap Usage in Node.js
+     #### Monitor Heap Usage in Node.js
             Use [heapdump] module in Nodejs to capture memory snapshots
 
 
