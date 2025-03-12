@@ -35,5 +35,17 @@
     *This makes the function that takes a long time run much faster after one execution. 
     *If the parameter changes, it will still have to reevaluate the function.
 
+
+    Here are a few things you should avoid when writing your code if possible:
+    -eval()
+    -arguments
+    -for in
+    -with
+    -delete
+
+    There are a few main reasons these should be avoided.
+    * JavaScript Hidden Classes and Inline Caching in V8
+    * Managing Arguments
+
 */
 

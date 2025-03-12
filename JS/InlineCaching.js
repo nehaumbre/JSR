@@ -1,0 +1,1 @@
+// Javascript Hidden Classes and Inline Caching in V8
