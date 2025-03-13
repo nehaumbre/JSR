@@ -51,6 +51,7 @@
 - What are weak references[WeakMap,WeakSet]?
   Weak references in JS allows an object to be referenced without preventing it from being garbage collected, especially in case of large objects that maynot need to persist in memory indefinitely
   ## WeakMap
+
      * Its like a regular map but with some key differences:
      - The keys must be objects ( you cannot use string, numbers, or any other primitive values)
      - If an object key has no other references, its automatically gets removed from the WeakMap when garbage collection happens
@@ -77,3 +78,31 @@
 - Explain Generators and Iterators in JS
 - What are ES6 Modules and how are they different from Common JS?
 - How do You Prevent memory leaks in Js?
+  ## WeakSet : Similar to a regular set but with some diffrences:
+    - it only stores objects (no numbers, strings, or primitive values)
+    - if an object is no longer referenced anywhere else, it gets automatically removed from WeakSet
+    - it doesnot allow iteration (you cant use .keys(), .values(), .forEach()).
+    - it does not have a .size property (because items can be removed anytime)
+    #### JavaScript
+        ```markdown
+        let weakSet = new WeakSet();
+
+        let obj1 ={id : 1};
+        let obj2 ={id : 2};
+        //add objects to weakset
+        weakSet.add(obj1);
+        weakSet.add(obj2);
+
+        console.log(weakSet.has(obj1));//Output: true
+        //Remove references to obj1
+        obj1= null;
+        //obj1 will be automatically removed from Weakset
+        ***when to use weakset***
+        - tracking DOM elements: Automatically remove elements when they are removed from the psage
+        - tracking active users or sessions: store active users temporarily without keeping them in the
+        memory forever
+        #### JavaScript
+        ```markdown
+        //real world example WeakMap for private data
+        //weakmap is often used to store private data inside object without exposing it publicly
+        //see leaks.js for code

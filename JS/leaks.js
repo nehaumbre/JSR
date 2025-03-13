@@ -60,4 +60,20 @@ console.log(performance.memory);//use in browser console
 
 const v8 = require("v8");
 console.log(v8.getHeapStatistics());
-
+//real world example WeakMap for private data
+const privateData = new WeakMap();
+class Person {
+    constructor(name){
+        privateData.set(this,{secret:`Hello, $(name)!`});
+    }
+    getSecret(){
+        return privateData.get(this).secret;
+    }
+}
+let person = new Person("Bob");
+console.log(person.getSecret()); //Output : "Hello, Bob!"
+person = null; //Remove reference to person
+//now the private data is automatically garbage collected
+// Here the privateData is only accessible inside the class
+// Wehn person object is deleted, its associated secret message is 
+// also removed from memory
