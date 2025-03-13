@@ -49,7 +49,31 @@
 
 
 - What are weak references[WeakMap,WeakSet]?
-  
+  Weak references in JS allows an object to be referenced without preventing it from being garbage collected, especially in case of large objects that maynot need to persist in memory indefinitely
+  ## WeakMap
+     * Its like a regular map but with some key differences:
+     - The keys must be objects ( you cannot use string, numbers, or any other primitive values)
+     - If an object key has no other references, its automatically gets removed from the WeakMap when garbage collection happens
+     - it doesnot allow iteration (you cant use .keys(), .values(), .forEach()).
+     - it does not have a .size property (because items can be removed anytime)
+        #### JavaScript
+        ```markdown
+        ```javascript
+        let weakMap = new Weakmap();
+        let user = {name: "Alice"};  
+        weakMap.set(user, "Some private data");//add user to weakMap
+        console.log(weakMap.get(user));// Output: Some private data
+        user = null;// Remove the reference to user
+        //object noe eligible for garbage collection 
+        //WeakMap automatically removes it from memory
+    -  When to use WeakMap?
+      * Caching objects: Store temporary data without worrying about manual cleanup
+      * Hiding private data:Associate hidden values with objects without exposing them publicly
+          
+     
+     
+     
+
 - Explain Generators and Iterators in JS
 - What are ES6 Modules and how are they different from Common JS?
 - How do You Prevent memory leaks in Js?
